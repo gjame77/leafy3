@@ -2,8 +2,8 @@ package com.devwiki.leafy.model.plant;
 
 import com.devwiki.leafy.dto.plant.PlantDetailDto;
 import com.devwiki.leafy.dto.plant.PlantSimpleDto;
+import jakarta.persistence.*;
 import lombok.*;
-import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity

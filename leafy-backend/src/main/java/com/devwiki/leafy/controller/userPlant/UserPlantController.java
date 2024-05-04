@@ -3,12 +3,12 @@ package com.devwiki.leafy.controller.userPlant;
 import com.devwiki.leafy.dto.userPlant.UserPlantDto;
 import com.devwiki.leafy.dto.userPlant.UserPlantSimpleDto;
 import com.devwiki.leafy.service.userPlant.UserPlantService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.util.List;
 
 @RestController
