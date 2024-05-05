@@ -3,12 +3,12 @@ package com.devwiki.leafy.controller.plantLog;
 import com.devwiki.leafy.dto.plantLog.PlantLogDto;
 import com.devwiki.leafy.dto.plantLog.PlantLogSimpleDto;
 import com.devwiki.leafy.service.plantLog.PlantLogService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.util.List;
 import java.util.stream.Collectors;
 
