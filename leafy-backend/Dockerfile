@@ -1,5 +1,5 @@
-# 빌드 이미지로 OpenJDK 11 & Gradle을 지정
-FROM gradle:7.6.1-jdk11 AS build
+# 빌드 이미지로 OpenJDK 17 & Gradle을 지정
+FROM gradle:7.6.1-jdk17 AS build
 
 # 소스코드를 복사할 작업 디렉토리를 생성
 WORKDIR /app
@@ -15,8 +15,8 @@ COPY . /app
 # Gradle 빌드를 실행하여 JAR 파일 생성
 RUN gradle clean build --no-daemon
 
-# 런타임 이미지로 OpenJDK 11-jre-slim 지정
-FROM openjdk:11-jre-slim
+# 런타임 이미지로 OpenJDK 17-jre 이미지 지정
+FROM eclipse-temurin:17-jre
 
 # 애플리케이션을 실행할 작업 디렉토리를 생성
 WORKDIR /app
@@ -25,8 +25,5 @@ WORKDIR /app
 COPY --from=build /app/build/libs/Leafy-0.0.1-SNAPSHOT.jar /app/leafy.jar
 
 EXPOSE 8080
-EXPOSE 5005
-
 ENTRYPOINT ["java"]
-CMD ["-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005", "-jar", "leafy.jar"]
-
+CMD ["-jar", "leafy.jar"]
