@@ -5,12 +5,12 @@ import com.devwiki.leafy.dto.user.UserPutRequestDto;
 import com.devwiki.leafy.dto.user.UserRequestDto;
 import com.devwiki.leafy.dto.user.UserResponseDto;
 import com.devwiki.leafy.service.user.UserService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.util.List;
 
 @RestController
